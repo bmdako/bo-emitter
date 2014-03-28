@@ -24,7 +24,7 @@ function BreakingViewModel() {
     self.breakingText = ko.observable();
     self.breakingType = ko.observable();
 
-    self.socket = io.connect('http://localhost:8001');
+    self.socket = io.connect('http://localhost:8000');
     self.socket.on('breaking', function(data) {
         console.log(data);
         self.breakingText(data.text);
