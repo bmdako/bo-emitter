@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="/jquery-1.11.0.min.js"></script>
+        <script src="/knockout-3.1.0.js"></script>
+    </head>
+    <body>
+      <style type="text/css">
+      .important {
+        background-color: red;
+        }
+        </style>
+      <div id="breakingWrapper">
+        <div data-bind="visible: showBreaking">
+          <p data-bind="text: breakingText, attr: {'class': breakingType}"></p>
+        </div>
+      </div>
+      <h1>Artikler</h1>
+      <div id="artiklerWrapper">
+          <div data-bind="foreach: artikler">
+              <p data-bind="text: titel"></p>
+          </div>
+          <button data-bind="click: hent">Hent flere</button>
+      </div>
+      <script src="http://localhost:8001/socket.io/socket.io.js"></script>
+      <script src="/app.js"></script>
+    </body>
+</html>
